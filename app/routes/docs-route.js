@@ -1,6 +1,7 @@
 const express = require('express');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+require('dotenv').config();
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ const swaggerDefinition = {
     title: 'API challenge Esto es',
     version: '1.0.0'
   },
-  servers: [{ url: 'https://nodejs-mysql2.herokuapp.com/api' }]
+  servers: [{ url: process.env.URL_API }]
 };
 
 const options = {
