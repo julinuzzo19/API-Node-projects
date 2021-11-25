@@ -5,7 +5,7 @@
 
 package-lock.json
 .prettierrc.json
-.env
+
 
 # User-specific files
 *.rsuser
