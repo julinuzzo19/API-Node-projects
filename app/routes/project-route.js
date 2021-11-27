@@ -103,7 +103,7 @@ module.exports = router;
  *      parameters:
  *        - in: body
  *          name: Project
- *          description: The project to create.
+ *          description: The project to update.
  *          schema:
  *            type: object
  *            required:

@@ -85,7 +85,6 @@ module.exports = {
     try {
       project.update(req.params.id, body, (err, data) => {
         if (err) {
-          console.log(err);
           res.status(statusCode.INTERNAL_ERROR).json({
             message: responseMessage.INTERNAL_ERROR
           });

@@ -1,9 +1,5 @@
 const sql = require('../config/config');
 
-const assingProject = async (users) => {
-  console.log(users);
-};
-
 module.exports = {
   create: async (data, users, result) => {
     let user_projects = [];
@@ -56,7 +52,6 @@ module.exports = {
   },
 
   update: async (id, project, result) => {
-    console.log(id);
     await sql.query(
       'update projects set ? where id = ?',
       [project, id],
