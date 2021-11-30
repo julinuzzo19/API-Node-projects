@@ -5,12 +5,13 @@ const responseMessage = require('../constants/messages');
 module.exports = {
   create: (req, res) => {
     const { users, ...body } = req.body;
-
+console.log(body)
     try {
       project.create(body, users, (err, data) => {
         if (err) {
-          res.status(statusCode.INTERNAL_ERROR).json({
-            message: responseMessage.INTERNAL_ERROR
+          console.log(err)
+          res.status(statusCode.BAD_REQUEST_ERROR).json({
+            message: responseMessage.BAD_REQUEST_ERROR
           });
         } else
           res.status(statusCode.RESPONSE_OK_CREATED).json({
@@ -19,9 +20,11 @@ module.exports = {
           });
       });
     } catch (error) {
+      console.log(error)
       res
         .status(statusCode.INTERNAL_ERROR)
         .json(responseMessage.INTERNAL_ERROR);
+        
     }
   },
   getAll: (req, res) => {

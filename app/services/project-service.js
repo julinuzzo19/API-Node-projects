@@ -3,7 +3,8 @@ const sql = require('../config/config');
 module.exports = {
   create: async (data, users, result) => {
     let user_projects = [];
-    await sql.query(`INSERT INTO projects SET ?`, data, async (err, res) => {
+    console.log(data)
+    await sql.query('INSERT INTO projects SET ?', data, async (err, res) => {
       if (err) {
         result(err, null);
         return;
@@ -13,7 +14,7 @@ module.exports = {
             user_projects.push([res.insertId, element]);
           });
           await sql.query(
-            `INSERT INTO users_projects (project_id, user_id) VALUES ?`,
+            'INSERT INTO users_projects (project_id, user_id) VALUES ?',
             [user_projects]
           );
         }

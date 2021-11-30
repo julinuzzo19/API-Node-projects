@@ -36,40 +36,39 @@ module.exports = router;
  *        name: page
  *        type: int
  *        description: number of page
- *
+ *   
  *  post:
- *      description: Use to create project
- *      responses:
- *        '201':
- *          description: Created project
- *        '500':
- *          description: Internal error
- *      parameters:
- *        - in: body
- *          name: Project
- *          description: The project to create.
+ *    description: Use to create project
+ *    responses:
+ *      '200':
+ *        description: Created project
+ *      '400':
+ *        description: Bad request
+ *      '500':
+ *        description: Internal error
+ *    requestBody:
+ *      description: Contact object
+ *      required: true
+ *      content:
+ *        application/json:
  *          schema:
- *            type: object
- *            required:
- *              - name
- *              - description
- *              - status
- *              - project_manager
- *            properties:
- *              name:
- *                type: string
- *              description:
- *                type: string
- *              status:
- *                type: string
- *              project_manager:
+ *           type: object
+ *           properties:
+ *            name:
+ *              type: string
+ *            description:
+ *              type: string
+ *            status:
+ *              type: string
+ *            project_manager:
+ *              type: integer
+ *            users:
+ *              type: array
+ *              items:
  *                type: integer
- *              users:
- *                type: array
- *                items:
- *                  type: integer
- *
- *
+ * 
+ * 
+ * 
  * /projects/{id}:
  *   parameters:
  *     - in: path
@@ -100,18 +99,14 @@ module.exports = router;
  *          description: updated succesfully
  *        '400':
  *          description: Project dont exists
- *      parameters:
- *        - in: body
- *          name: Project
- *          description: The project to update.
- *          schema:
- *            type: object
- *            required:
- *              - name
- *              - description
- *              - status
- *              - project_manager
- *            properties:
+ *      requestBody:
+ *        description: Contact object
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *             type: object
+ *             properties:
  *              name:
  *                type: string
  *              description:
@@ -120,6 +115,10 @@ module.exports = router;
  *                type: string
  *              project_manager:
  *                type: integer
+ *              users:
+ *                type: array
+ *                items:
+ *                  type: integer
  *
  *
  */
