@@ -115,10 +115,7 @@ module.exports = router;
  *                type: string
  *              project_manager:
  *                type: integer
- *              users:
- *                type: array
- *                items:
- *                  type: integer
+ *             
  *
  *
  */
