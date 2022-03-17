@@ -1,4 +1,3 @@
-API SWAGGER DOCUMENTATION: https://node-mysql3.herokuapp.com/api/docs/
 
 Backend challenge
 Se debe crear un servicio que maneje los datos de la plataforma de gestión de proyectos.
